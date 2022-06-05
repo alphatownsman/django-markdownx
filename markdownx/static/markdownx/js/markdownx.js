@@ -612,7 +612,7 @@ function getCookie(name) {
     if (document.cookie && document.cookie.length) {
         var cookies = document.cookie
             .split(';')
-            .filter(function (cookie) { return cookie.indexOf(name + "=") === 0; })[0];
+            .filter(function (cookie) { return cookie.trim().indexOf(name + "=") === 0; })[0];
         try {
             return decodeURIComponent(cookies.trim().substring(name.length + 1));
         }
